@@ -1,0 +1,59 @@
+@use 'config/reset';
+@use 'config/cores';
+@use 'config/fonts';
+@use 'config/resolution.scss';
+@use 'secoes/products';
+@use 'secoes/menu.scss';
+@use 'secoes/header.scss';
+
+// @mixin elementoContainer($max-width: 100%) {
+//   max-width: 1024px;
+//   width: 100%;
+//   margin: 0 auto;
+// }
+
+body {
+  background-color: cores.$colorBackgroundBody;
+}
+.container {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media screen and (max-width: resolution.$tablet) {
+  .container {
+    max-width: 80%;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 48.5%);
+    column-gap: 3%;
+  }
+}
+
+@media screen and (max-width: resolution.$mobile) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 4%;
+    header nav {
+      margin-right: 10px;
+    }
+    header nav ul {
+      list-style: none;
+      flex-wrap: wrap;
+    }
+  }
+  .products {
+    display: block;
+    .product-item {
+      margin-bottom: 32px;
+    }
+
+    li img {
+      max-width: 100%;
+    }
+  }
+}

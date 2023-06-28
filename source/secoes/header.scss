@@ -1,0 +1,14 @@
+@use '../config/cores.scss';
+
+header {
+  background-color: cores.$colorBackgroundHeader;
+  position: sticky;
+  top: 0;
+  left: 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+  }
+}
